@@ -47,7 +47,8 @@ RUN set -ex \
     && mkdir -p /opt/domoticz/userdata \
     && rm -rf /var/lib/apt/lists/* \
     && ln -s /usr/bin/pip3 /usr/bin/pip \
-    && pip3 install setuptools requests
+    && pip3 install setuptools requests \
+    && git clone --depth 1 --branch v.3.0.0 https://github.com/stas-demydiuk/domoticz-zigbee2mqtt-plugin.git plugins/zigbee2mqtt
 
 VOLUME /opt/domoticz/userdata
 
