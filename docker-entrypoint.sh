@@ -22,13 +22,11 @@ if ! [ -d $USER_DATA_DIR/plugins ]; then
   ln -s $DOMOTICZ_DIR/plugins $USER_DATA_DIR/plugins
 fi
 
-if [ $1 == "$DOMOTICZ_DIR/domoticz" ]; then
-
 if [ -f /opt/domoticz/userdata/customstart.sh ]; then
 	source /opt/domoticz/userdata/customstart.sh
 fi
 
-if [ $1 == "/opt/domoticz/domoticz" ]; then
+if [ $1 == "$DOMOTICZ_DIR/domoticz" ]; then
   exec $@ $CMD_ARGS
 else
   exec "$@"
